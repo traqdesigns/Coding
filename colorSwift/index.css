@@ -1,0 +1,60 @@
+* {
+margin: 0;
+padding: 0;
+font-size: 24px;
+}
+
+body {
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    background-color: #E8E8E8;
+    color: #000500;
+    //platinum black and melon #E8E8E8 #000500 #F6ACA2
+   
+}
+
+.container {
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    border: 8px double blue;
+}
+
+
+.bungee-hairline-regular {
+    /* font-family: "Bungee Hairline", serif; */
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .title {
+    font-family: "Bungee Hairline", serif;
+    font-size: 8rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-align: center;
+  }
+
+  label {
+display: block;
+margin-bottom: 10px;
+
+  }
+
+  input {
+
+    margin-bottom: 10px;
+  }
+  
+  input [type="text"] {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #000500;
+  }
+
+  .box  {
+    height: 100px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
