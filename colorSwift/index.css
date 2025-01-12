@@ -18,7 +18,7 @@ body {
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 10px;
-    border: 8px double blue;
+   
 }
 
 
@@ -57,4 +57,7 @@ margin-bottom: 10px;
     height: 100px;
     width: 100%;
     margin-bottom: 10px;
+    border: 2px solid #000500;
+    border-radius: 10px;
+    margin-top: 10px;
   }
