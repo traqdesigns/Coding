@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Color Swift</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+    <!-- container
+    title
+    input - hex color
+    slider - 0 - 100
+    inputput and altered color -->
+    <div class="container">
+        <h1 class="title">Color Swift</h1>
+
+    </div>
+    <label for="hex">Hex Color:</label>
+    <input type="text" id="hexInput" name="hex" placeholder="#000000" />
+    <br/>
+    <label for="slider" id="sliderText">Brightness:</label>
+    <input type="range" id="slider" class= "slider" name="slider" min="0" max="100" value="0" />
+    <p>Input Color</p>
+    <div id="inputColor" class="box"></div>
+    <p>Swifted Color</p>
+    <div id="alteredColor" class="box"></div>
+
+    <script src="index.pack.js"></script>
+</body>
+
+</html>
