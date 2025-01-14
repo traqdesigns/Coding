@@ -1,8 +1,20 @@
-let inputColor = document.getElementById('hexInput');
+let hexInput = document.getElementById('hexInput');
+let inputcolor = document.getElementById('inputColor');
+
+hexInput.addEventListener('keyup', () => {
+    const hex = hexInput.value;
+    if (!isValidHex(hex)) return;
+
+    const strippedHex = hex.replace('#', '');
+    inputcolor.style.backgroundColor = '#' + strippedHex;
+
+    
+
+})
 
 const isValidHex = (hex) => {
 
-    if (!hex)  return false; 
+    if (!hex) return false;
     //stripping hastag
     if (hex[0] === '#') hex = hex.replace('#', '');
     //checking if it is a valid hex
@@ -18,9 +30,15 @@ const isValidHex = (hex) => {
 
 }
 
+
+
+
+
+
+
 //console log test
 
 console.log(isValidHex('123'));
-console.log(isValidHex('123456'));
-console.log(isValidHex('#123'));    
-console.log(isValidHex('#123456'));
+console.log(isValidHex('000000000'));
+console.log(isValidHex('#123'));
+console.log(isValidHex('#ac'));
