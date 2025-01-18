@@ -2,6 +2,36 @@ let hexInput = document.getElementById('hexInput');
 let inputcolor = document.getElementById('inputColor');
 let slider = document.getElementById('slider');
 let sliderText = document.getElementById('sliderText');
+let alteredcolor = document.getElementById('alteredColor');
+const alteredColorText = document.getElementById('alteredColorText');
+
+
+const lightenText = document.getElementById('lightenText');
+const darkenText = document.getElementById('darkenText');
+const toggleButton = document.getElementById('toggleButton');
+
+toggleButton.addEventListener('click', () => {
+
+    if (toggleButton.classList.contains('toggled')) {
+        toggleButton.classList.remove('toggled');
+        darkenText.classList.add('unselected');
+        lightenText.classList.remove('unselected');
+    } else {
+        toggleButton.classList.add('toggled');
+        lightenText.classList.add('unselected');
+        darkenText.classList.remove('unselected');
+    }
+
+    slider.value = 0;
+    sliderText.textContent = slider.value + '%';
+    alteredcolor.style.backgroundColor = hexInput.value;
+    alteredColorText.innerText = `Swifted Color: ${hexInput.value}`;
+
+    reset();
+
+
+})
+
 hexInput.addEventListener('keyup', () => {
     const hex = hexInput.value;
     if (!isValidHex(hex)) return;
@@ -9,7 +39,7 @@ hexInput.addEventListener('keyup', () => {
     const strippedHex = hex.replace('#', '');
     inputcolor.style.backgroundColor = '#' + strippedHex;
 
-
+    reset();
 
 })
 
@@ -51,36 +81,65 @@ const hexToRGB = (hex) => {
 
 convertRGBToHex = (r, g, b) => {
 
-    const firstPair = "0" + r.toString(16).slice(-2)
-    const secondPair = "0" + r.toString(16).slice(-2)
-    const thirdPair = "0" + r.toString(16).slice(-2)
-  
+    const firstPair = ("0" + r.toString(16)).slice(-2); 
+    const secondPair = ("0" + g.toString(16)).slice(-2); 
+    const thirdPair = ("0" + b.toString(16)).slice(-2); 
 
-    if (firstPair.length === 1) {
-
-        r = '0' + r;
-
-    }
-
-    if (secondPair.length === 1) {
-            
-            g = '0' + g;
-    
-        }
-
-        if (thirdPair.length === 1) {
-            
-            b = '0' + b;
-    
-        }   
-
-
-    return '#' + firstPair + secondPair + thirdPair;
+  const hex = '#' + firstPair + secondPair + thirdPair;
+    return hex;
 }
 
 
 
+
+const alterColor = (hex, percentage) => {
+
+    hexToRGB(hex)
+    //grabbing indivsual r, g, b values from the hex
+    const { r, g, b } = hexToRGB(hex);
+    const amount = Math.floor((percentage / 100) * 255);
+
+    const newR = Math.max(0, Math.min(r + amount, 255));
+    const newG = Math.max(0, Math.min(g + amount, 255));
+    const newB = Math.max(0, Math.min(b + amount, 255));
+
+    console.log(newR, newG, newB);
+
+    return convertRGBToHex(newR, newG, newB);
+    ;
+
+}
+
+
 slider.addEventListener('input', () => {
 
-   sliderText.textContent =  slider.value + '%';
+    if (!isValidHex(hexInput.value)) return;
+
+    sliderText.textContent = slider.value + '%';
+
+    //Calculate the appropriate value for color alteration 
+
+    const valueAddition = toggleButton.classList.contains('toggled') ? -slider.value : slider.value;
+
+    //taking value of slider and passing into alterColor function along with hexInput value from input
+    const alteredHex = alterColor(hexInput.value, valueAddition);
+    alteredcolor.style.backgroundColor = alteredHex;
+
+    console.log(alteredHex);
+    console.log(alteredColor.backgroundColor);
+    alteredColorText.innerText = `Swifted Color: ${alteredHex}`;
+
+
+    //check if valid hex 'hexInput'
+    //get altered hex 
+    //updated the altered color 
 })
+
+const reset = () => {  
+slider.value = 0;
+sliderText.textContent = slider.value + '%';
+alteredColor.style.backgroundColor = hexInput.value;
+alteredColorText.innerText = `Swifted Color: ${hexInput.value}`;   
+}
+
+

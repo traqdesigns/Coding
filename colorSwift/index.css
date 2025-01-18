@@ -18,7 +18,7 @@ body {
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 10px;
-   
+    
 }
 
 
@@ -60,4 +60,48 @@ margin-bottom: 10px;
     border: 2px solid #000500;
     border-radius: 10px;
     margin-top: 10px;
+    background-color: #74A4BC;
+  }
+
+  .toggle {
+
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .toggle-text { 
+
+    margin-right: 10px;
+    font-size: 1.2rem;
+    font-weight: 200;
+  }
+
+  .inner-circle {
+    height: 40px;
+    width: 40px;
+    border-radius: 10%;
+    background-color: #A675A1;
+    margin: 10px;
+    transition: all 250ms;
+  }
+
+  .toggle-button {
+
+    height: 64px;
+    width: 100px;
+    border-radius: 25px;
+    background-color: #FFF;
+    margin-right: 10px;
+  }
+
+  /* if toggled button has a class of toggled */
+  .toggle-button.toggled > .inner-circle {
+    transform: translateX(40px);
+    background-color: #8DAA91;
+  }
+
+  .unselected {
+
+    opacity: 0.3;
   }
