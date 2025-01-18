@@ -146,7 +146,9 @@ const reset = () => {
 slider.value = 0;
 sliderText.textContent = slider.value + '%';
 alteredColor.style.backgroundColor = hexInput.value;
-alteredColorText.innerText = `Swifted Color: ${hexInput.value}`;   
+alteredColorText.innerText = `Swifted: ${hexInput.value}`;   
 }
+
+
 
 
