@@ -105,3 +105,8 @@ margin-bottom: 10px;
 
     opacity: 0.3;
   }
+
+  input[type="range"] {
+    width: 100%; /* Full width of the parent container */
+ Limit the maximum width */
+  }

@@ -4,7 +4,7 @@ let slider = document.getElementById('slider');
 let sliderText = document.getElementById('sliderText');
 let alteredcolor = document.getElementById('alteredColor');
 const alteredColorText = document.getElementById('alteredColorText');
-
+const body = document.querySelector('body');
 
 const lightenText = document.getElementById('lightenText');
 const darkenText = document.getElementById('darkenText');
@@ -16,10 +16,17 @@ toggleButton.addEventListener('click', () => {
         toggleButton.classList.remove('toggled');
         darkenText.classList.add('unselected');
         lightenText.classList.remove('unselected');
+        body.style.backgroundColor = 'black';
+        body.style.color = 'white';
+        toggleButton.style.backgroundColor = 'white';
+
     } else {
         toggleButton.classList.add('toggled');
         lightenText.classList.add('unselected');
         darkenText.classList.remove('unselected');
+        body.style.backgroundColor = 'white';
+        body.style.color = 'black';
+        toggleButton.style.backgroundColor = 'black';
     }
 
     slider.value = 0;
