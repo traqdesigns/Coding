@@ -7,7 +7,7 @@ font-size: 24px;
 body {
     font-family: "Raleway", serif;
     font-optical-sizing: auto;
-    background-color: #E8E8E8;
+    background-color: #FFFFFF;
     color: #000500;
     //platinum black and melon #E8E8E8 #000500 #F6ACA2
    
@@ -54,7 +54,7 @@ margin-bottom: 10px;
   }
 
   .box  {
-    height: 100px;
+    height: 20vh;
     width: 100%;
     margin-bottom: 10px;
     border: 2px solid #000500;
@@ -74,7 +74,7 @@ margin-bottom: 10px;
 
     margin-right: 10px;
     font-size: 1.2rem;
-    font-weight: 200;
+    font-weight: 300;
   }
 
   .inner-circle {
